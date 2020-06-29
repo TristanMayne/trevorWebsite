@@ -1,0 +1,18 @@
+<%- include ("partials/head") %>
+
+
+<div class = "ui main text container segment">
+    <div class = "ui huge header"><%= data.index[id].title%></div>
+        <div class = "item">
+            <iframe class = "iframe" scrolling='no' frameborder='0' allowfullscreen='true' src='<%= data.index[id].model %>' name='PreviewFrame3D' id='PreviewFrame3D'></iframe><br/>
+            <hr>
+            <div class = "content">   
+                <p> <%= data.index[id].text %> </p>
+            </div>
+        </div>
+        <a class = "ui button back" href = "/">
+            <i class = "caret left icon"></i>Go Back
+        </a>
+</div>
+
+<%- include ("partials/foot") %>

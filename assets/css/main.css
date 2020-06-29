@@ -1,0 +1,22 @@
+.iframe{
+    width: 75%;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    height: 400px;
+}
+.container.main{
+    margin-top: 5.0em;
+}
+
+i.icon.outline{
+    font-size: 1.5em;
+}
+.right.item{
+    height: auto;
+}
+a.ui.button.back{
+    margin-top: 1em;
+}
+i.caret.left{
+    font-size: 1em;
+}
