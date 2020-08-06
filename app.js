@@ -8,6 +8,10 @@ app.get("/", function(req, res){
     res.redirect("/projects");
 })
 
+app.get("/test", function(req, res){
+    res.render("mobiletest.ejs", {data:data})
+});
+
 app.get("/projects", function(req,res){
     res.render("index.ejs", {data:data})
 });
