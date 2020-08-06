@@ -21,6 +21,10 @@ app.get("/projects/:id", function(req,res){
     res.render("show.ejs", {data:data, id: id})
 });
 
+app.get("*", function(req, res){
+    res.render("index.ejs", {data:date})
+});
+
 
 app.listen(3000, process.env.IP, function(){
     console.log("TrevorServerStarted");
