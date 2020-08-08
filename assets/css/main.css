@@ -20,3 +20,13 @@ a.ui.button.back{
 i.caret.left{
     font-size: 1em;
 }
+html, body {
+    overflow-x: hidden;
+  }
+  body {
+    position: relative
+  }
+  div.ui.card{
+   width: fit-content;
+  }
+ 

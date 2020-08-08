@@ -1,35 +1,26 @@
 <%- include ("partials/head") %>
-
-
 <div class = "ui main container">
 
-    <h1>Mobile Test Route </h1>
-    
-    <div class = "ui three grid stackable special cards">
-    <% for(var i = 0; i < Object.keys(data.index).length; i++){ %>
-            <div class="card">
-                <div class="blurring dimmable image">
-                  <div class="ui dimmer">
-                    <div class="content">
-                      <div class="center">
-                        <div class="ui inverted button"><a href = "/projects/<%= i %>"> See More</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <img src="<%= data.index[i].pic %>">
-                </div>
-                <div class="content">
-                  <a class="header"><%= data.index[i].title%></a>
-                  <div class="meta">
-                    <p><%= data.index[i].text %></p>
-                    
-                  </div>
-                </div>
-                <div class="extra content">
-                  <span class="date"><%= data.index[i].date%></span>
-                </div>
-              </div>
+<% if (mobile == true){ %>
+   <h1>Mobile Test Route </h1>
+<% } %>
 
+    <div class = "ui stackable three column grid">
+        <div class = "row"></div>
+    <% for(var i = 0; i < 3; i++){ %>
+        <div class = "column">
+            <div class = "ui card">
+                <div class = "image">
+                    <img src="<%= data.index[i].pic %>">
+                </div>
+                
+            </div>
+                
+        </div> 
     <% }; %>
+    </div>
 </div>
 <%- include ("partials/foot") %>
+<!-- Object.keys(data.index).length -->
+
+
