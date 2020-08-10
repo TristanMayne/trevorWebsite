@@ -4,19 +4,27 @@ app.use(express.static(__dirname + "/assets"));
 var data = require("./assets/data/data.json");
 
 app.get("/", function(req, res){
+    console.log(req.originalUrl);
     res.redirect("/projects");
 })
 
 
 
 app.get("/test", function(req, res){
+    console.log(req.originalUrl);
+    console.log("hello");
     res.render("devcheck.ejs");
+});
+
+app.get("/projects/redirect", function(req, res){
+    res.send("success");
 });
 
 app.get("/test/:mobile", function(req,res){
     var mobile;
     if(req.params.mobile == "m"){
         mobile = true; 
+        
         res.render("mobiletest.ejs", {data:data, mobile:mobile})
         return;
     } else {
@@ -37,7 +45,7 @@ app.get("/projects/:id", function(req,res){
 });
 
 app.get("*", function(req, res){
-    res.send("catch all");
+    res.render("catchall.ejs");
 });
 
 
