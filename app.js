@@ -10,25 +10,29 @@ app.get("/", function(req, res){
 
 
 
+
 app.get("/test", function(req, res){
-    res.render("devcheck.ejs");
+    var lastUrl = req.originalUrl;
+    console.log(lastUrl);
+    res.render("devcheck.ejs", {lastUrl:lastUrl});
 });
 
-app.get("/projects/redirect", function(req, res){
-    res.send("success");
-});
 
 app.get("/test/:mobile", function(req,res){
-    var mobile;
     var lastUrl = req.originalUrl;
+    var mobile;
+    console.log(lastUrl);
+    console.log(req.params.mobile);
     if(req.params.mobile == "m"){
-        mobile = true; 
-        
+        mobile = true;
+        res.render("mobiletest.ejs", {data:data, mobile:mobile, lastUrl:lastUrl})
+        return;
+    } if (req.params.mobile == "d") {
+        mobile = false;
         res.render("mobiletest.ejs", {data:data, mobile:mobile, lastUrl:lastUrl})
         return;
     } else {
-        mobile = false;
-        res.render("mobiletest.ejs", {data:data, mobile:mobile, lastUrl:lastUrl})
+        res.send("you sent in: "+ req.params.mobile);
         return;
     }
 });
@@ -44,7 +48,9 @@ app.get("/projects/:id", function(req,res){
 });
 
 app.get("*", function(req, res){
-    res.render("catchall.ejs");
+    var lastUrl = req.originalUrl;
+
+    res.send(lastUrl);
 });
 
 
