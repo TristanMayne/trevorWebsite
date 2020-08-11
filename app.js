@@ -2,17 +2,15 @@ var express = require("express");
 var app = express();
 app.use(express.static(__dirname + "/assets"));
 var data = require("./assets/data/data.json");
+const { localsName } = require("ejs");
 
 app.get("/", function(req, res){
-    console.log(req.originalUrl);
     res.redirect("/projects");
 })
 
 
 
 app.get("/test", function(req, res){
-    console.log(req.originalUrl);
-    console.log("hello");
     res.render("devcheck.ejs");
 });
 
@@ -22,14 +20,15 @@ app.get("/projects/redirect", function(req, res){
 
 app.get("/test/:mobile", function(req,res){
     var mobile;
+    var lastUrl = req.originalUrl;
     if(req.params.mobile == "m"){
         mobile = true; 
         
-        res.render("mobiletest.ejs", {data:data, mobile:mobile})
+        res.render("mobiletest.ejs", {data:data, mobile:mobile, lastUrl:lastUrl})
         return;
     } else {
         mobile = false;
-        res.render("mobiletest.ejs", {data:data, mobile:mobile})
+        res.render("mobiletest.ejs", {data:data, mobile:mobile, lastUrl:lastUrl})
         return;
     }
 });
