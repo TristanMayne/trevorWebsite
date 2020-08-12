@@ -4,7 +4,7 @@
             "title": "My redesign of a Fan",
             "model" : "https://www.3dcontentcentral.com/external-site-embed.aspx?format=3D&catalogid=171&modelid=376265&width=250&height=250&edraw=true",
             "text" : "abcd",
-            "pic" : "./images/fan1.jpeg", 
+            "pic" : "https://images.unsplash.com/photo-1528293064916-02c0435e416d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80", 
             "date" : "August 2019"
         },
         "1":{
